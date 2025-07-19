@@ -14,7 +14,7 @@ type Transaction struct {
 	To string
 	Amount float64
 	Timestamp int64
-	Signature string
+	Signature []byte
 }
 
 // type Block struct {
@@ -28,7 +28,7 @@ type Transaction struct {
 // 	Signature string
 // 
 
-func NewTransaction(from, to string, amount float) *Transaction {
+func NewTransaction(from, to string, amount float64) *Transaction {
 	return &Transaction{
 		From: from,
 		To: to,
