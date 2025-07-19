@@ -6,6 +6,8 @@ import (
 	"crypto/rand"
 	"crypto/x509"
 	"encoding/hex"
+	"crypto/sha256"
+	"math/big"
 )
 
 func GenerateKeyPair() (*ecdsa.PrivateKey, error) {
