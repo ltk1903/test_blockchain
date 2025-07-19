@@ -2,12 +2,17 @@ package blockchain
 
 import (
 	"time"
+	"crypto/ecdsa"
+	"crypto/sha256"
+	"encoding/json"
+
+	"test_blockchain/pkg/wallet"
 )
 
 type Transaction struct {
 	From string
 	To string
-	Amount float
+	Amount float64
 	Timestamp int64
 	Signature string
 }
