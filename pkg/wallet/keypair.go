@@ -41,6 +41,6 @@ func Sign(hash []byte, priv *ecdsa.PrivateKey) ([]byte, error) {
 func Verify(hash, signature []byte, pub *ecdsa.PublicKey) bool {
 	keyLen := len(signature) / 2
 	r := new(big.Int).SetBytes(signature[:keyLen])
-	s := new(big.Int).SetBytes(signature[:keyLen])
+	s := new(big.Int).SetBytes(signature[keyLen:])
 	return ecdsa.Verify(pub, hash, r, s)
 }
